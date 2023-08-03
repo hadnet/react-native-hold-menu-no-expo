@@ -1,6 +1,8 @@
 # react-native-hold-menu-no-expo
 
-[![Reanimated v2 version](https://img.shields.io/github/package-json/v/hadnet/react-native-hold-menu-no-expo/develop?label=Reanimated%20v2&style=flat-square)](https://www.npmjs.com/package/react-native-hold-menu-no-expo) [![npm](https://img.shields.io/npm/l/react-native-hold-menu-no-expo?style=flat-square)](https://www.npmjs.com/package/react-native-hold-menu-no-expo) [![npm](https://img.shields.io/badge/types-included-blue?style=flat-square)](https://www.npmjs.com/package/react-native-hold-menu-no-expo)
+[![Reanimated v2 version](https://img.shields.io/github/package-json/v/hadnet/react-native-hold-menu-no-expo/master?label=Version&style=flat-square)](https://www.npmjs.com/package/@hadnet/react-native-hold-menu-no-expo)
+[![Licensen](https://img.shields.io/github/package-json/license/hadnet/react-native-hold-menu-no-expo/master?label=License&style=flat-square)](https://www.npmjs.com/package/@hadnet/react-native-hold-menu-no-expo)
+[![npm](https://img.shields.io/badge/Types-included-blue?style=flat-square)](https://www.npmjs.com/package/@hadnet/react-native-hold-menu-no-expo)
 
 
 A performant, easy to use hold to open context menu for React Native CLI projects powered by Reanimated.

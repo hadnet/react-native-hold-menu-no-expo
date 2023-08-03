@@ -1,7 +1,7 @@
 {
   "name": "@hadnet/react-native-hold-menu-no-expo",
   "version": "0.2.0",
-  "description": "test",
+  "description": "A performant, easy to use hold to open context menu for React Native CLI projects powered by Reanimated.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
