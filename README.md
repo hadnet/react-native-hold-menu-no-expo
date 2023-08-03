@@ -14,7 +14,7 @@ yarn add react-native-hold-menu-no-expo
 ## Usage
 
 ```js
-import { HoldItem } from "react-native-hold-menu-no-expo";
+import { HoldItem, HoldMenuProvider } from "react-native-hold-menu-no-expo";
 ```
 
 ![hold-menu-preview](./preview.gif)
