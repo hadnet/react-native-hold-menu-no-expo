@@ -1,5 +1,7 @@
 
 
+* docs: add dependencies and Reanimated 3 issue (15406b0)
+
 * chore: add description and change badges (8ff9070)
 
 # 0.2.0 (2023-08-03)
