@@ -1,5 +1,8 @@
 
 
+* docs: edit install line (5f3fccc)
+* docs: add base work (6937c1a)
+
 * docs: add dependencies and Reanimated 3 issue (15406b0)
 
 * chore: add description and change badges (8ff9070)
