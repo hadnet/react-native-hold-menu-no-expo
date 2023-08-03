@@ -7,6 +7,14 @@
 
 A performant, easy to use hold to open context menu for React Native CLI projects powered by Reanimated.
 
+## Dependencies
+
+```
+  @react-native-community/blur react-native-gesture-handler react-native-haptic-feedback react-native-reanimated
+```
+
+> With Reanimated 3 there is an issue [#4613](https://github.com/software-mansion/react-native-reanimated/issues/4613#issuecomment-1663211375) and a fix.
+
 ## Installation
 
 ```sh
