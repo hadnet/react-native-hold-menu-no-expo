@@ -18,7 +18,7 @@ A performant, easy to use hold to open context menu for React Native CLI project
 ## Installation
 
 ```sh
-yarn add react-native-hold-menu-no-expo
+yarn add @hadnet/react-native-hold-menu-no-expo
 ```
 
 ## Usage
