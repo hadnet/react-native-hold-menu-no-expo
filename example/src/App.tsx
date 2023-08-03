@@ -1,13 +1,19 @@
 import * as React from 'react';
 
-import { StyleSheet, View } from 'react-native';
-import { HoldMenuNoExpoView } from 'react-native-hold-menu-no-expo';
+import {StyleSheet, View} from 'react-native';
+import {HoldMenuProvider} from 'react-native-hold-menu-no-expo';
+import HoldMenuButton from './components/HoldMenuButton';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <HoldMenuNoExpoView color="#32a852" style={styles.box} />
-    </View>
+    <HoldMenuProvider
+      safeAreaInsets={{top: 0, right: 0, left: 0, bottom: 0}}
+      theme="light"
+      backdropBlur={false}>
+      <View style={styles.container}>
+        <HoldMenuButton />
+      </View>
+    </HoldMenuProvider>
   );
 }
 
@@ -16,10 +22,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
   },
 });
