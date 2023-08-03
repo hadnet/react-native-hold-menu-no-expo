@@ -42,6 +42,10 @@ import { HoldItem, HoldMenuProvider } from "react-native-hold-menu-no-expo";
 
 Check out [the documentation website](https://enesozturk.github.io/react-native-hold-menu).
 
+ #### Based on react-native-hold-menu from
+
+- [Mo Gorhom](https://gorhom.dev/)
+- [Enes Öztürk](https://github.com/enesozturk)
 
 ## Contributing
 
