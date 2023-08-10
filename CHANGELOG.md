@@ -1,5 +1,12 @@
 
 
+# [0.3.0](https://github.com/hadnet/react-native-hold-menu-no-expo/compare/v0.2.3...v0.3.0) (2023-08-10)
+
+
+### Features
+
+* add menuBgColors prop to HoldMenuProvider for customizable menu dark/light bg colors ([20031f7](https://github.com/hadnet/react-native-hold-menu-no-expo/commit/20031f7183bfe8f97816703c437e292ad3691a0f))
+
 * docs: edit install line (5f3fccc)
 * docs: add base work (6937c1a)
 
