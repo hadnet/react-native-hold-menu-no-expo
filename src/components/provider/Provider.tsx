@@ -33,6 +33,7 @@ const ProviderComponent = ({
   safeAreaInsets,
   onOpen,
   onClose,
+  menuBgColors,
 }: HoldMenuProviderProps) => {
   if (iconComponent)
     AnimatedIcon = Animated.createAnimatedComponent(iconComponent);
@@ -80,6 +81,7 @@ const ProviderComponent = ({
       state,
       theme,
       menuProps,
+      menuBgColors,
       safeAreaInsets: safeAreaInsets || {
         top: 0,
         bottom: 0,
@@ -87,7 +89,7 @@ const ProviderComponent = ({
         right: 0,
       },
     }),
-    [state, theme, menuProps, safeAreaInsets]
+    [state, theme, menuProps, menuBgColors, safeAreaInsets]
   );
 
   return (

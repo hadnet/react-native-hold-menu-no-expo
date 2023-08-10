@@ -36,7 +36,7 @@ import type {MenuItemProps} from './types';
 const AnimatedView = Animated.createAnimatedComponent(BlurView);
 
 const MenuListComponent = () => {
-  const {state, theme, menuProps} = useInternal();
+  const {state, theme, menuProps, menuBgColors} = useInternal();
 
   const [itemList, setItemList] = React.useState<MenuItemProps[]>([]);
 
@@ -98,11 +98,11 @@ const MenuListComponent = () => {
       backgroundColor:
         theme.value === 'light'
           ? IS_IOS
-            ? 'rgba(255, 255, 255, .75)'
-            : 'rgba(255, 255, 255, .95)'
+            ? menuBgColors?.light ?? 'rgba(255, 255, 255, .75)'
+            : menuBgColors?.light ?? 'rgba(255, 255, 255, .95)'
           : IS_IOS
-          ? 'rgba(0,0,0,0.5)'
-          : 'rgba(39, 39, 39, .8)',
+          ? menuBgColors?.dark ?? 'rgba(0,0,0,0.5)'
+          : menuBgColors?.dark ?? 'rgba(39, 39, 39, .8)',
     };
   }, [theme]);
 

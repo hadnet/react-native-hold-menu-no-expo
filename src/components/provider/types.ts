@@ -1,3 +1,5 @@
+import type {Color} from '../../context/internal';
+
 export interface HoldMenuProviderProps {
   /**
    * Theme of hold menu. Effects to backdrop and context menu styles. Optional.
@@ -9,6 +11,10 @@ export interface HoldMenuProviderProps {
   theme?: 'dark' | 'light';
   backdropBlur?: boolean;
   iconComponent?: any;
+  menuBgColors?: {
+    light: Color;
+    dark: Color;
+  };
   children: React.ReactElement | React.ReactElement[];
 
   /**
