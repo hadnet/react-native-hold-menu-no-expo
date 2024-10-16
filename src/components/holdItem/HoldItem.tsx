@@ -336,8 +336,6 @@ const HoldItemComponent = ({
         : withTiming(-0.1, {duration: HOLD_ITEM_TRANSFORM_DURATION});
 
     return {
-      zIndex: 10,
-      position: 'absolute',
       top: itemRectY.value,
       left: itemRectX.value,
       width: itemRectWidth.value,

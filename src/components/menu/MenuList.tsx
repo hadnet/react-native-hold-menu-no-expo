@@ -39,6 +39,7 @@ const MenuListComponent = () => {
   const {state, theme, menuProps, menuBgColors} = useInternal();
 
   const [itemList, setItemList] = React.useState<MenuItemProps[]>([]);
+  const [isVisible, setIsVisible] = React.useState<boolean>(state.value === CONTEXT_MENU_STATE.ACTIVE);
 
   const menuHeight = useDerivedValue(() => {
     const itemsWithSeparator = menuProps.value.items.filter(
@@ -64,16 +65,20 @@ const MenuListComponent = () => {
     );
 
     const _leftPosition = leftOrRight(menuProps);
+    const isMenuActive = state.value === CONTEXT_MENU_STATE.ACTIVE
 
     const menuScaleAnimation = () =>
-      state.value === CONTEXT_MENU_STATE.ACTIVE
+      isMenuActive
         ? withSpring(1, SPRING_CONFIGURATION_MENU)
         : withTiming(0, {
-            duration: HOLD_ITEM_TRANSFORM_DURATION,
-          });
+          duration: HOLD_ITEM_TRANSFORM_DURATION,
+        }, finished => {
+          if (finished && !isMenuActive)
+            runOnJS(setIsVisible)(false)
+        });
 
     const opacityAnimation = () =>
-      withTiming(state.value === CONTEXT_MENU_STATE.ACTIVE ? 1 : 0, {
+      withTiming(isMenuActive ? 1 : 0, {
         duration: HOLD_ITEM_TRANSFORM_DURATION,
       });
 
@@ -116,6 +121,15 @@ const MenuListComponent = () => {
   };
 
   useAnimatedReaction(
+    () => state.value === CONTEXT_MENU_STATE.ACTIVE,
+    isMenuActive => {
+      if (isMenuActive)
+        runOnJS(setIsVisible)(true)
+    },
+    [state]
+  )
+
+  useAnimatedReaction(
     () => menuProps.value.items,
     _items => {
       if (!deepEqual(_items, prevList.value)) {
@@ -125,20 +139,40 @@ const MenuListComponent = () => {
     [menuProps]
   );
 
+  if (!isVisible)
+    return null
+
   return (
-    <AnimatedView
-      blurAmount={100}
-      animatedProps={animatedProps}
-      style={[styles.menuContainer, messageStyles]}>
-      <Animated.View
-        style={[
-          StyleSheet.absoluteFillObject,
-          styles.menuInnerContainer,
-          animatedInnerContainerStyle,
-        ]}>
-        <MenuItems items={itemList} />
-      </Animated.View>
-    </AnimatedView>
+    <Animated.View style={[styles.menuContainer, messageStyles]}>
+      <AnimatedView
+        intensity={100}
+        animatedProps={animatedProps}
+        style={StyleSheet.absoluteFillObject}
+      >
+           <Animated.View
+          style={[
+            StyleSheet.absoluteFillObject,
+            styles.menuInnerContainer,
+            animatedInnerContainerStyle,
+          ]}
+        >
+          <MenuItems items={itemList} />
+        </Animated.View>
+      </AnimatedView>
+    </Animated.View>
+    // <AnimatedView
+    //   blurAmount={100}
+    //   animatedProps={animatedProps}
+    //   style={[styles.menuContainer, messageStyles]}>
+    //   <Animated.View
+    //     style={[
+    //       StyleSheet.absoluteFillObject,
+    //       styles.menuInnerContainer,
+    //       animatedInnerContainerStyle,
+    //     ]}>
+    //     <MenuItems items={itemList} />
+    //   </Animated.View>
+    // </AnimatedView>
   );
 };
 
